@@ -1,4 +1,11 @@
 
+Bag file link - 
+https://fpv.ifi.uzh.ch/datasets/ 
+indoor facing 
+reference is #3
+target is #7
+please make a folder names bags and them there 
+
 
 ### 1
 extracted poses from both 3 and 7 - Timestamp,PosX,PosY,PosZ,OriX,OriY,OriZ,OriW
