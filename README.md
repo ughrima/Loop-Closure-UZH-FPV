@@ -1,20 +1,31 @@
 
-project
-1-extracted poses from both 3 and 7 - 
-Timestamp,PosX,PosY,PosZ,OriX,OriY,OriZ,OriW
 
-2- converted them to pcds using caliberation information provided 
+### 1
+extracted poses from both 3 and 7 - Timestamp,PosX,PosY,PosZ,OriX,OriY,OriZ,OriW
 
-3- decided threshold value by generating trajecotry map and also histogram of minimum distance between them ie points bw bag 3 and 7
+### 2
+converted them to pcds using caliberation information provided 
 
-4 - Histogram gave us  - High frequency near 0–0.5m: This is clear evidence of spatial overlap → loop closures.
+### 3
+decided threshold value by generating trajecotry map and also histogram of minimum distance between them ie points bw bag 3 and 7
 
-5 - hence took 0.5m as threshold for loop closure ground truth, computed ground truth got 5897 loop closures - Bag7_Timestamp,Bag7_PosX,Bag7_PosY,Bag7_PosZ,Bag3_Closest_Timestamp,Bag3_PosX,Bag3_PosY,Bag3_PosZ,Distance
+### 4
+Histogram gave us  - High frequency near 0–0.5m: This is clear evidence of spatial overlap → loop closures.
 
-6 - lpgw pipeline - bag 3 and bag 7 - to identify loop closure with minimum number of comparison basically optimize - loop closures prediction 
-7 - changed the prediction.csv to match the ground truth file 
-7 - comparison evaluation with ground truth 
-results - 
+### 5 
+hence took 0.5m as threshold for loop closure ground truth, computed ground truth got 5897 loop closures - Bag7_Timestamp,Bag7_PosX,Bag7_PosY,Bag7_PosZ,Bag3_Closest_Timestamp,Bag3_PosX,Bag3_PosY,Bag3_PosZ,Distance
+
+### 6 
+lpgw pipeline - bag 3 and bag 7 - to identify loop closure with minimum number of comparison basically optimize - loop closures prediction 
+
+### 7 
+changed the prediction.csv to match the ground truth file 
+
+### 8 
+comparison evaluation with ground truth 
+
+
+### results - 
 
 Improved Evaluation Results:
 True Positives (TP): 285
@@ -26,7 +37,7 @@ Recall: 0.8584
 F1-Score: 0.4335
 Accuracy: 0.6987
 
-now need to do - 
+###  now need to do - 
 identify threshold - why was 0.05m was taken for ground truth also the susequent threshold values
 also the idea behind lpgw is to compare and bag 3 and 7, take only 1000 points or so ie less points and detect the loop closure, if that matches
 then we can say that we optimised  loop closure detection, the idea is to give good results but with less points so that less computation, rn all points are being taken.
